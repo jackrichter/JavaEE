@@ -19,7 +19,8 @@ public class EmployeeManagementImplementation implements EmployeeManagementServi
 	public List<Employee> getAllEmployees() {
 		
 		List<Employee> tempList = new ArrayList<Employee>();
-		tempList.add(new Employee("Temp", "Temp", "Temp", 1000));
+		tempList.add(new Employee("Richard", "Chesterwood", "Presenter", 10));
+		tempList.add(new Employee("Mathew", "Adams", "Producer", 1000));
 		
 		return tempList;
 	}
