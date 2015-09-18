@@ -11,8 +11,7 @@ import com.vpp.staffmanagement.domain.Employee;
 public class EmployeeManagementImplementation implements EmployeeManagementService {
 
 	@Override
-	public void registerEmployee(Employee newEmployee) 
-	{
+	public void registerEmployee(Employee newEmployee) {
 		// TODO Auto-generated method stub
 	}
 
