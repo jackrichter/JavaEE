@@ -1,7 +1,6 @@
 package com.vpp.staffmanagement.domain;
 
-public class Employee
-{
+public class Employee {
 	private String firstName;
 	private String surname;
 	private String jobRole;
