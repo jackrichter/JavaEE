@@ -17,5 +17,6 @@
 	<classpathentry kind="lib" path="C:/glassfishv3/glassfish/modules/javax.servlet.jsp.jar"/>
 	<classpathentry kind="lib" path="C:/glassfishv3/glassfish/modules/javax.servlet.jsp.jstl.jar"/>
 	<classpathentry kind="lib" path="C:/glassfishv3/glassfish/modules/javax.transaction.jar"/>
+	<classpathentry kind="lib" path="C:/glassfishv3/glassfish/modules/gf-client.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
