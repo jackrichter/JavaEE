@@ -1,4 +1,4 @@
-package com.vpp.staffmanagement;
+package com.vpp.dao;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,15 +8,18 @@ import javax.ejb.Stateless;
 import com.vpp.staffmanagement.domain.Employee;
 
 @Stateless
-public class EmployeeManagementImplementation implements EmployeeManagementService {
+public class EmployeeDaoImpl {
+	
+	/**
+	 * Using The "No Interface" from Java 1.6 and onwards. OBS! Used for local interfaces Only. Not remote!
+	 */
 
-	@Override
-	public void registerEmployee(Employee newEmployee) {
+	public void insert(Employee newEmployee) {
 		// TODO Auto-generated method stub
+
 	}
 
-	@Override
-	public List<Employee> getAllEmployees() {
+	public List<Employee> findAll() {
 		
 		List<Employee> tempList = new ArrayList<Employee>();
 		tempList.add(new Employee("Richard", "Chesterwood", "Presenter", 10));
@@ -25,13 +28,11 @@ public class EmployeeManagementImplementation implements EmployeeManagementServi
 		return tempList;
 	}
 
-	@Override
-	public List<Employee> searchBySurname(String surname) {
+	public List<Employee> findBySurname(String surname) {
 		
 		List<Employee> tempList = new ArrayList<Employee>();
 		tempList.add(new Employee("Temp", "Temp", "Temp", 1000));
 		
 		return tempList;
 	}
-
 }

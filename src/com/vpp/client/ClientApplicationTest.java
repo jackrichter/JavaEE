@@ -18,7 +18,7 @@ public class ClientApplicationTest {
 			Context jndi = new InitialContext();
 			
 			EmployeeManagementService service = (EmployeeManagementService) 
-					jndi.lookup("java:global/EmployeeManagement/EmployeeManagementImplementation");
+					jndi.lookup("java:global/EmployeeManagement/EmployeeManagementServiceImpl");
 			
 			List<Employee> employees = service.getAllEmployees();
 			
