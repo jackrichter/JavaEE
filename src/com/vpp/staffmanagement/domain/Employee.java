@@ -8,11 +8,14 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
+//@Table(name="TBL_EMPL")
 public class Employee implements Serializable
 {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
+	
+//	@Column(name="VC_FIRST")
 	private String firstName;
 	private String surname;
 	private String jobRole;
