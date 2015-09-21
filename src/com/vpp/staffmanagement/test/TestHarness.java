@@ -17,11 +17,26 @@ public class TestHarness {
 		EntityTransaction tx = em.getTransaction();
 		tx.begin();
 		
-		Employee employee1 = new Employee("Mark", "Briggs", "Engineer", 10000);
+		// Ch6, adding an object to the database
+//		Employee employee1 = new Employee("Mark", "Briggs", "Engineer", 10000);
 		
-		em.persist(employee1);
+//		em.persist(employee1);
+		
+		// Ch7, getting the object from the database
+		Employee emp1 = em.find(Employee.class, 1);
+		System.out.println(emp1);
+		
+		// Any change to a persisted object will cause JPA to issue an update upon commit
+		emp1.setSurname("Chesterwood");
+		emp1.setSurname("King");
+		
+		// Delete object
+		em.remove(emp1);
 
 		tx.commit();
 		em.close();
+		
+		// Employee object still exists in memory (while in method scope), but not in database
+		System.out.println(emp1);
 	}
 }
