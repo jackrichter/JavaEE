@@ -18,5 +18,10 @@
 	<classpathentry kind="lib" path="C:/glassfishv3/glassfish/modules/javax.servlet.jsp.jstl.jar"/>
 	<classpathentry kind="lib" path="C:/glassfishv3/glassfish/modules/javax.transaction.jar"/>
 	<classpathentry kind="lib" path="C:/glassfishv3/glassfish/modules/gf-client.jar"/>
+	<classpathentry kind="src" path=".apt_generated">
+		<attributes>
+			<attribute name="optional" value="true"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
