@@ -36,8 +36,8 @@ public class EmployeeDaoImpl {
 	@SuppressWarnings("unchecked")
 	public List<Employee> findBySurname(String surname)
 	{
-		List<Employee> results = em.createQuery("select e from Employee e where e.surname = :name")
-						.setParameter("name", surname)
+		List<Employee> results = em.createQuery("select e from Employee e where e.surname = :surname")
+						.setParameter("surname", surname)
 						.getResultList();
 		
 		return results;
