@@ -72,11 +72,9 @@
 	   <delete file="${jarfile}"/>
 
 	   <jar destfile="${jarfile}" basedir="${bin}">
-		   <!-- Add this when you do the JPA stuff
 		   <metainf dir="${src}/META-INF">
 		   	   <include name="persistence.xml"/>
 		   </metainf>
-		   -->
 		  
 	   </jar>
 	</target>
