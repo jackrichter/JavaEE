@@ -23,7 +23,7 @@ public class TestJPQL {
 //		TestJPQL.preparedQueryEmployeeTbl(em, tx);
 //		TestJPQL.testNamedQuery(em, tx);
 //		TestJPQL.testReportdQuery(em, tx);
-		TestJPQL.testAggregationdQuery(em, tx);
+//		TestJPQL.testAggregationdQuery(em, tx);
 	}
 	
 	public static void testAggregationdQuery(EntityManager em, EntityTransaction tx)
@@ -37,13 +37,13 @@ public class TestJPQL {
 		
 		// First requirement is the total numbers of employees
 		Query q = em.createQuery("select count(e) from Employee e");
-		long empNum = (long) q.getSingleResult();
+		long empNum = (Long) q.getSingleResult();
 		
 		System.out.println("We have " + empNum + " employees");
 		
 		// Second requirement is the average salary of all employees
 		Query q2 = em.createQuery("select avg(e.salary) from Employee e");
-		double avgSalary = (double) q2.getSingleResult();
+		double avgSalary = (Double) q2.getSingleResult();
 		
 		System.out.println("The average salary is " + avgSalary);
 		

@@ -9,7 +9,7 @@ import com.vpp.dao.EmployeeDaoImpl;
 import com.vpp.staffmanagement.domain.Employee;
 
 @Stateless
-public class EmployeeManagementServiceImpl implements EmployeeManagementService {
+public class EmployeeManagementImplementation implements EmployeeManagementService {
 	
 	@EJB
 	private EmployeeDaoImpl dao;
@@ -27,19 +27,16 @@ public class EmployeeManagementServiceImpl implements EmployeeManagementService 
 //		this.dao = (EmployeeDao) jndi.lookup("java:global/EmployeeManagement/EmployeeDaoImpl");
 //	}
 
-	@Override
 	public void registerEmployee(Employee newEmployee) {
 		
 		this.dao.insert(newEmployee);
 	}
 
-	@Override
-	public List<Employee> getAllEmployees() {
-		
+	public List<Employee> getAllEmployees() 
+	{
 		return dao.findAll();
 	}
 
-	@Override
 	public List<Employee> searchBySurname(String surname) {
 		
 		return dao.findBySurname(surname);

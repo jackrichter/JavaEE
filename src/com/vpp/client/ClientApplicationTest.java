@@ -18,9 +18,12 @@ public class ClientApplicationTest {
 			Context jndi = new InitialContext();
 			
 			EmployeeManagementService service = (EmployeeManagementService) 
-					jndi.lookup("java:global/EmployeeManagement/EmployeeManagementServiceImpl");
+					jndi.lookup("java:global/EmployeeManagement/EmployeeManagementImplementation");
+			
+//			service.registerEmployee(new Employee("Richard", "Chesterwood", "Programmer", 15000));
 			
 			List<Employee> employees = service.getAllEmployees();
+//			List<Employee> employees = service.searchBySurname("Jones");
 			
 			for (Employee next : employees) 
 			{
@@ -28,7 +31,7 @@ public class ClientApplicationTest {
 			}
 		} 
 		catch (NamingException e) {
-			
+			e.printStackTrace();
 			System.out.println(e);
 		}
 	}

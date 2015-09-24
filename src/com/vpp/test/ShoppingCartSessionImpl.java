@@ -16,19 +16,16 @@ public class ShoppingCartSessionImpl implements ShoppingCartSession {
 		this.items = new ArrayList<String>();
 	}
 	
-	@Override
 	public void addItem(String item) 
 	{
 		this.items.add(item);
 	}
 	
-	@Override
 	public List<String> getAllItems()
 	{
 		return this.items;
 	}
 	
-	@Override
 	@Remove			// Crucial to a Stateful bean. Server knows that the bean can be destroyed.
 	public void checkout()
 	{

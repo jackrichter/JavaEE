@@ -72,7 +72,7 @@
 	   <delete file="${jarfile}"/>
 
 	   <jar destfile="${jarfile}" basedir="${bin}">
-		   <metainf dir="${src}/META-INF">
+		  <metainf dir="${src}/META-INF">
 		   	   <include name="persistence.xml"/>
 		   </metainf>
 		  
