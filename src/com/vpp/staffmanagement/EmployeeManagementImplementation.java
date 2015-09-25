@@ -2,7 +2,9 @@ package com.vpp.staffmanagement;
 
 import java.util.List;
 
+import javax.annotation.Resource;
 import javax.ejb.EJB;
+import javax.ejb.SessionContext;
 import javax.ejb.Stateless;
 import javax.ejb.TransactionAttribute;
 import javax.ejb.TransactionAttributeType;
@@ -16,12 +18,19 @@ public class EmployeeManagementImplementation implements EmployeeManagementServi
 	@EJB
 	private EmployeeDaoImpl dao;
 	
+	@EJB
+	private ExternalPayrollSystem payrollSystem;
+	
+	@Resource
+	private SessionContext serverCtx;		// This object enables access to theServer
+	
 	/**
 	 * Not a good solution.
 	 * What to do with the exceptions? 
 	 * JUnit tests can't have an external service running (JNDI)
 	 * 
 	 * Use DEPENDENCY INJECTION instead!
+	 * @throws SystemUnavailableException 
 	 */
 //	public EmployeeManagementServiceImpl() throws NamingException {
 //		
@@ -29,9 +38,35 @@ public class EmployeeManagementImplementation implements EmployeeManagementServi
 //		this.dao = (EmployeeDao) jndi.lookup("java:global/EmployeeManagement/EmployeeDaoImpl");
 //	}
 
-	public void registerEmployee(Employee newEmployee) {
+	public void registerEmployee(Employee newEmployee) throws SystemUnavailableException {
 		
 		this.dao.insert(newEmployee);
+		
+		// now call the payroll service
+//		try
+//		{
+//			payrollSystem.enrollEmployee(newEmployee);
+//		}
+//		catch (SystemUnavailableException e)
+//		{
+//			// Rollback
+//			serverCtx.setRollbackOnly();
+//			
+//			// Must re-throw the checked exception to the client in an Rollback operation
+//			throw e;
+//		}
+		/**
+		 * A much simpler way to do the same as the above (Rollback for checked exceptions),
+		 * is to have the exception class (SystemUnavailableException) be annotated with
+		 * '@ApplicationException(rollback=true)'. Thats it!
+		 */
+		payrollSystem.enrollEmployee(newEmployee);
+		
+		/**
+		 * To simulate the Automatic Rollback mechanism in EJBs (happens with unchecked exceptions),
+		 * we throw an unchecked exception. 
+		 */
+//		throw new NullPointerException();
 	}
 
 	public List<Employee> getAllEmployees() 
