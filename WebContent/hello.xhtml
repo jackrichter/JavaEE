@@ -1,0 +1,16 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:h="http://java.sun.com/jsf/html">
+
+	<h:body>
+		
+		<h:form>
+			<h3>Please, enter your name:</h3>
+			
+			<label>Name:</label>&#160;	<!-- the space entity that works in jsf/xhtml (Facelets)  -->
+			<h:inputText value="#{user.name}" />
+			<h:commandButton value="Go to the welcome page" action="welcome" />
+			
+		</h:form>
+		
+	</h:body>
+</html>

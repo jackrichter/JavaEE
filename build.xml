@@ -24,10 +24,11 @@
     		<include name="jsf-api.jar"/>
     		<include name="security.jar"/>
     	</fileset>
-    </path>	 
+    </path>	
 	
+	<!-- From chapter 13 (JSF), remember to add "war" to the BuildAll target to enable a .war file to be created! -->
     <target name="BuildAll"
-            depends="clean, prep, compile, jar"
+            depends="clean, prep, compile, jar, war"
             description="Complete rebuild.">
         <echo message="Build complete."/>
     </target>	
