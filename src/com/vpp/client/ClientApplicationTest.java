@@ -21,6 +21,7 @@ public class ClientApplicationTest {
 			EmployeeManagementService service = (EmployeeManagementService) 
 					jndi.lookup("java:global/EmployeeManagement/EmployeeManagementImplementation");
 			
+//			ClientApplicationTest.testAddEmployeeNote(service);
 //			ClientApplicationTest.testOtherServices(service);
 			ClientApplicationTest.testRegisterNewEmployeeWithRollBackForPayroll(service);
 		} 
@@ -52,5 +53,10 @@ public class ClientApplicationTest {
 		{
 			System.out.println(next);
 		}
+	}
+	
+	public static void testAddEmployeeNote(EmployeeManagementService service)
+	{
+		service.addEmployeeNote();
 	}
 }

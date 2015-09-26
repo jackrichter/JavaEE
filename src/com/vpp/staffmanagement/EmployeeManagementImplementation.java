@@ -92,4 +92,12 @@ public class EmployeeManagementImplementation implements EmployeeManagementServi
 	{
 		return 109.3838;
 	}
+	
+	public void addEmployeeNote()
+	{
+		Employee emp = this.dao.findById(201);
+		
+		emp.addNote("Joined temporarerly today");
+		emp.addNote("Leaving on Friday");
+	}
 }

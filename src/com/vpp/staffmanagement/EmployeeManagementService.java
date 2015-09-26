@@ -12,4 +12,5 @@ public interface EmployeeManagementService {
 	public void registerEmployee(Employee newEmployee) throws SystemUnavailableException;
 	public List<Employee> getAllEmployees();
 	public List<Employee> searchBySurname(String surname);
+	public void addEmployeeNote();
 }

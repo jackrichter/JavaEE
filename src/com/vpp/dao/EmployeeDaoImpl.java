@@ -42,4 +42,9 @@ public class EmployeeDaoImpl {
 		
 		return results;
 	}
+	
+	public Employee findById(int id)
+	{
+		return this.em.find(Employee.class, id);
+	}
 }
