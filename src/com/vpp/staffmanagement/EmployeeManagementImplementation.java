@@ -13,7 +13,7 @@ import com.vpp.dao.EmployeeDaoImpl;
 import com.vpp.staffmanagement.domain.Employee;
 
 @Stateless
-public class EmployeeManagementImplementation implements EmployeeManagementService {
+public class EmployeeManagementImplementation implements EmployeeManagementServiceRemote, EmployeeManagementServiceLocal {
 	
 	@EJB
 	private EmployeeDaoImpl dao;

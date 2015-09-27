@@ -7,8 +7,11 @@
 			<h3>Please, enter your name:</h3>
 			
 			<label>Name:</label>&#160;	<!-- the space entity that works in jsf/xhtml (Facelets)  -->
+			
 			<h:inputText value="#{user.name}" />
-			<h:commandButton value="Go to the welcome page" action="welcome" />
+			
+			<!-- <h:commandButton value="Go to the welcome page" action="welcome" /> -->
+			<h:commandButton value="Go to the welcome page" action="#{user.greetUser}" />
 			
 		</h:form>
 		

@@ -6,7 +6,7 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
-import com.vpp.staffmanagement.EmployeeManagementService;
+import com.vpp.staffmanagement.EmployeeManagementServiceRemote;
 import com.vpp.staffmanagement.SystemUnavailableException;
 import com.vpp.staffmanagement.domain.Employee;
 
@@ -18,7 +18,7 @@ public class ClientApplicationTest {
 		{
 			Context jndi = new InitialContext();
 			
-			EmployeeManagementService service = (EmployeeManagementService) 
+			EmployeeManagementServiceRemote service = (EmployeeManagementServiceRemote) 
 					jndi.lookup("java:global/EmployeeManagement/EmployeeManagementImplementation");
 			
 //			ClientApplicationTest.testAddEmployeeNote(service);
@@ -31,7 +31,7 @@ public class ClientApplicationTest {
 		}
 	}
 	
-	public static void testRegisterNewEmployeeWithRollBackForPayroll(EmployeeManagementService service)
+	public static void testRegisterNewEmployeeWithRollBackForPayroll(EmployeeManagementServiceRemote service)
 	{	
 		try
 		{
@@ -44,7 +44,7 @@ public class ClientApplicationTest {
 		}
 	}
 	
-	public static void testOtherServices(EmployeeManagementService service)
+	public static void testOtherServices(EmployeeManagementServiceRemote service)
 	{	
 //		List<Employee> employees = service.getAllEmployees();
 		List<Employee> employees = service.searchBySurname("Jones");
@@ -55,7 +55,7 @@ public class ClientApplicationTest {
 		}
 	}
 	
-	public static void testAddEmployeeNote(EmployeeManagementService service)
+	public static void testAddEmployeeNote(EmployeeManagementServiceRemote service)
 	{
 		service.addEmployeeNote();
 	}
