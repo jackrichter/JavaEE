@@ -18,8 +18,15 @@ public class ClientApplicationTest {
 		{
 			Context jndi = new InitialContext();
 			
+			/**
+			 * ATTENTION: This JNDI lookup string (with concrete implementation class),
+			 * works only when there is a SINGLE interface.
+			 */
+//			EmployeeManagementServiceRemote service = (EmployeeManagementServiceRemote) 
+//					jndi.lookup("java:global/EmployeeManagement/EmployeeManagementImplementation");
+
 			EmployeeManagementServiceRemote service = (EmployeeManagementServiceRemote) 
-					jndi.lookup("java:global/EmployeeManagement/EmployeeManagementImplementation");
+					jndi.lookup("java:global/EmployeeManagement/EmployeeManagementImplementation!com.vpp.staffmanagement.EmployeeManagementServiceRemote");
 			
 //			ClientApplicationTest.testAddEmployeeNote(service);
 //			ClientApplicationTest.testOtherServices(service);
@@ -36,7 +43,7 @@ public class ClientApplicationTest {
 		try
 		{
 //			service.registerEmployee(new Employee("Richard", "Chesterwood", "Programmer", 15000));
-			service.registerEmployee(new Employee("Jack", "Parsons", "Broadcaster", 5000));
+			service.registerEmployee(new Employee("James", "Parsons", "Broadcaster", 5000));
 		}
 		catch (SystemUnavailableException e)
 		{
