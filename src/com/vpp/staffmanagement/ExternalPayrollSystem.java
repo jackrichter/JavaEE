@@ -16,7 +16,8 @@ public class ExternalPayrollSystem
 	 */
 	public void enrollEmployee(Employee newEmployee) throws SystemUnavailableException
 	{
-		if(Math.random() < 0.5)
+//		if(Math.random() < 0.5)
+		if(Math.random() < 0.1)
 		{
 			throw new SystemUnavailableException();
 		}
