@@ -16,6 +16,8 @@ import javax.persistence.OneToMany;
 //@Table(name="TBL_EMPL")
 public class Employee implements Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
@@ -47,6 +49,34 @@ public class Employee implements Serializable
 	@Override
 	public String toString() {
 		return "Employee " + this.firstName + " " + this.surname;
+	}
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getJobRole() {
+		return jobRole;
+	}
+
+	public void setJobRole(String jobRole) {
+		this.jobRole = jobRole;
+	}
+
+	public int getSalary() {
+		return salary;
+	}
+
+	public void setSalary(int salary) {
+		this.salary = salary;
+	}
+
+	public String getSurname() {
+		return surname;
 	}
 
 	public void setSurname(String newSurname) {

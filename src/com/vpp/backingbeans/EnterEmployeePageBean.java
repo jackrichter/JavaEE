@@ -61,7 +61,8 @@ public class EnterEmployeePageBean
 			this.employeeService.registerEmployee(emp);
 			
 			// 2. Redirect to the next page
-			return "employeeDetails";
+//			return "employeeDetails";
+			return "all-employees";
 		} 
 		catch (SystemUnavailableException e)
 		{
