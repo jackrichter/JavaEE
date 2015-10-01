@@ -1,6 +1,7 @@
 <HTML xmlns="http://www.w3.org/1999/xhtml"
 	  xmlns:h="http://java.sun.com/jsf/html"
-	  xmlns:f="http://java.sun.com/jsf/core">
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:p="http://primefaces.prime.com.tr/ui">
 	  
 	  <h:head>
 	  	<title>All Employees</title>
@@ -10,32 +11,33 @@
 		  <H1>These are all the employees:</H1>
 		  
 		  <h:form>
-			  <h:dataTable value="#{allEmployeesPage.allEmployees}" var="employee">
+			  <p:dataTable value="#{allEmployeesPage.allEmployees}" var="employee" binding="#{allEmployeesPage.dataTable}">
 			  
-			  	<h:column>
+			  	<p:column>
 			  		<f:facet name="header">First Name</f:facet>
 			  		<f:facet name="footer">First Name</f:facet>
 			  		<h:commandLink action="#{allEmployeesPage.showEmployee}">
 			  			#{employee.firstName}
 			  		</h:commandLink>
-			  	</h:column>
-			  	<h:column>
+			  	</p:column>
+			  	<p:column>
 			  		<f:facet name="header">Surname</f:facet>
 			  		<f:facet name="footer">Surname</f:facet>
 			  		#{employee.surname}
-			  	</h:column>
-			  	<h:column>
-			  		<f:facet name="header">Job Role</f:facet>
-			  		<f:facet name="footer">Job Role</f:facet>
+			  	</p:column>
+			  	<p:column>
+			  		<f:facet name="header">Jobrole</f:facet>
+			  		<f:facet name="footer">Jobrole</f:facet>
 			  		#{employee.jobRole}
-			  	</h:column>
-			  	<h:column>
+			  	</p:column>
+			  	<p:column>
 			  		<f:facet name="header">Salary</f:facet>
 			  		<f:facet name="footer">Salary</f:facet>
 			  		#{employee.salary}
-			  	</h:column>
-			  </h:dataTable>
-			  </h:form>
+			  	</p:column>
+			  	
+			  </p:dataTable>
+		  </h:form>
 	  
 	  </h:body>
 	  
