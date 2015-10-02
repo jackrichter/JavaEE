@@ -8,11 +8,13 @@ import javax.ejb.SessionContext;
 import javax.ejb.Stateless;
 import javax.ejb.TransactionAttribute;
 import javax.ejb.TransactionAttributeType;
+import javax.jws.WebService;
 
 import com.vpp.dao.EmployeeDaoImpl;
 import com.vpp.staffmanagement.domain.Employee;
 
 @Stateless
+@WebService(name="employeeManagementWebService")	// SOAP
 public class EmployeeManagementImplementation implements EmployeeManagementServiceRemote, EmployeeManagementServiceLocal {
 	
 	@EJB
