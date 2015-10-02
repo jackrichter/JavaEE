@@ -8,6 +8,7 @@ import javax.ejb.SessionContext;
 import javax.ejb.Stateless;
 import javax.ejb.TransactionAttribute;
 import javax.ejb.TransactionAttributeType;
+import javax.jws.WebMethod;
 import javax.jws.WebService;
 
 import com.vpp.dao.EmployeeDaoImpl;
@@ -89,6 +90,7 @@ public class EmployeeManagementImplementation implements EmployeeManagementServi
 	 * 
 	 * Use this for "In Memory" operations!
 	 */
+	@WebMethod(exclude=true)		// Exclude this method from the WSDL
 	@TransactionAttribute(TransactionAttributeType.SUPPORTS)
 	public double dummyInMemoryMethod()
 	{
