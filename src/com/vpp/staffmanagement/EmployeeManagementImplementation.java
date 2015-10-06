@@ -104,4 +104,10 @@ public class EmployeeManagementImplementation implements EmployeeManagementServi
 		emp.addNote("Joined temporarerly today");
 		emp.addNote("Leaving on Friday");
 	}
+
+	@Override
+	public Employee getEmployeeById(int id)
+	{
+		return this.dao.findById(id);
+	}
 }

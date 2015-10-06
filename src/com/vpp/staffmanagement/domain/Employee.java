@@ -11,9 +11,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
 //@Table(name="TBL_EMPL")
+@XmlRootElement
 public class Employee implements Serializable
 {
 	private static final long serialVersionUID = 1L;
